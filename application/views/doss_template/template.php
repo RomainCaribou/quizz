@@ -14,6 +14,8 @@
     <!-- Bootstrap Core CSS -->
     <link href="<?php  echo base_url()?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+	<!-- Header CSS -->
+	 <link href="<?php  echo base_url()?>assets/css/header.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="<?php  echo base_url()?>assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
@@ -46,13 +48,9 @@
     
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+              <img class="col-xs-4 col-md-3 col-lg-3" src="<?php echo base_url()?>assets/pictures/uvhc.png" />
+                            <img class="col-xs-4 col-md-3 col-lg-3" src="<?php echo base_url()?>assets/pictures/ensiame.png" />
+               <!-- <a class="navbar-brand" href="index.html">SB Admin v2.0</a>  -->
             </div>
             <!-- /.navbar-header -->
     </nav>
