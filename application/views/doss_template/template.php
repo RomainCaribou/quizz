@@ -47,15 +47,15 @@
     <div id="wrapper">
     
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div  class=" img-header-left col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+            <div  class=" img-header-left col-xs-4  ">
                      <img  class="img-responsive" src="<?php echo base_url()?>assets/pictures/uvhc.png" />
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-            		<a class="" href="index.html">Edusmart</a>
+            <div class="col-xs-4  header-title text-center">
+            		<p class="header-title-txt"> Edusmart</p>
             </div>
               <!--   -->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">             
-              <img class="img-responsive" src="<?php echo base_url()?>assets/pictures/ensiame.png" />
+            <div class="col-xs-4 ">             
+              <img class="img-responsive pull-right" src="<?php echo base_url()?>assets/pictures/ensiame.png" />
                
             </div>
             <!-- /.navbar-header -->
