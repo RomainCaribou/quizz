@@ -47,10 +47,16 @@
     <div id="wrapper">
     
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-              <img class="col-xs-4 col-md-3 col-lg-3" src="<?php echo base_url()?>assets/pictures/uvhc.png" />
-                            <img class="col-xs-4 col-md-3 col-lg-3" src="<?php echo base_url()?>assets/pictures/ensiame.png" />
-               <!-- <a class="navbar-brand" href="index.html">SB Admin v2.0</a>  -->
+            <div  class=" img-header-left col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                     <img  class="img-responsive" src="<?php echo base_url()?>assets/pictures/uvhc.png" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+            		<a class="" href="index.html">Edusmart</a>
+            </div>
+              <!--   -->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">             
+              <img class="img-responsive" src="<?php echo base_url()?>assets/pictures/ensiame.png" />
+               
             </div>
             <!-- /.navbar-header -->
     </nav>
