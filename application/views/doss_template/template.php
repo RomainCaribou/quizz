@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="Première_page" content="">
     <meta name="Rin_rom" content="">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
@@ -43,6 +43,24 @@
 
 
     <div id="wrapper">
+    
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+    </nav>
+
+<?php 
+echo $content;
+?>
+
 
     </div>
     <!-- /#wrapper -->
@@ -64,13 +82,13 @@
     <script src="<?php  echo base_url()?>assets/dist/js/sb-admin-2.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    
     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
+
     </script>
+
+
+
 
 </body>
 
