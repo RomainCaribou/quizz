@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+
+.marge {
+	
+	margin-left:5%;
+	width:150px;
+	
+	
+}
+
+.erreur {
+	
+	color:red;
+	font-weight:bold;
+	text-align:center;
+	
+	
+}
+
+.position {
+	
+	position:relative;
+	margin-left:30px;
+	
+}
