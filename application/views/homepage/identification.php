@@ -10,13 +10,13 @@ $(document).ready(function(){
 <link href="<?php  echo base_url()?>assets/css/identification.css" rel="stylesheet">
 
 
-<button class="btn btn-primary btn-md pull-right" style="margin-top:10px;"data-toggle="modal"
+<button class="btn btn-primary btn-md pull-right" style="margin-top:10px;margin-right:10px;"data-toggle="modal"
 	data-target="#myModal">Connexion</button>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="modal-content col-xs-7	col-xs-offset-3" style="margin-top:50px">
+		<div class="modal-content col-xs-8	col-xs-offset-2" style="margin-top:50px">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">&times;</button>
@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 					<input placeholder="Login" class="form-control" name="login"
 						type="text" required /> <br> <input placeholder="Mot de passe"
-						class="form-control" name="psw" type="password" required /> 
+						class="form-control" name="psw" type="password" /> 
 
 
 				
@@ -48,4 +48,16 @@ $(document).ready(function(){
 	</div>
 	<!-- /.modal-dialog -->
 </div>
+
+<div class="" style=" margin-top:100px; clear:both;" >
+
+	<div class=" col-sm-4 " style="margin-left:0px">
+              <img class="img-responsive" style="display: block;margin-left: auto;margin-right: auto;border-radius:25px;" src="<?php echo base_url()?>assets/pictures/interactive_meeting.jpg" />
+    </div>
+	<div class=" col-sm-7 well well-lg" style=" margin:10px;border-radius:15px;" >
+                        <h4>Description</h4>
+                        <p>Edusmart est un outil d'interaction multiplateforme qui vous permettra d'animer vos r&eacute;unions de maniere interactive et d'en conserver un historique. Int&eacute;grant de nombreuses fonctionnalit&eacute;s, cet outil vous permettra de r&eacute;aliser des sondages et questionnaires de mani&egrave;re simple et intuitive. </p>
+                        <p>S&eacute;curis&eacute; &agrave; l'aide d'un VPN local sur GL-inet et int&eacute;grant le cryptage automatique des donn&eacute;es qui transitent, ce module pourra &ecirc;tre utilis&eacute; lors de r&eacute;union confidentielles en toute s&eacute;curit&eacute;.</p>
+                         </div>
+	</div>
 

@@ -8,7 +8,7 @@ Login :  <input name="login" type="text" required/>
 Password :  <input name="psw" type="password" required/> 
 
 <?php if(isset($res)) { ?>
-<p> Tu t'es plant&eacute; trou de balle </p>
+<p> Erreur d'identifiants </p>
 <?php } ?>
 
 
