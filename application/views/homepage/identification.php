@@ -25,7 +25,7 @@ $(document).ready(function(){
 			<div class="modal-body">
 
 
-				<form method="post" class="marge" action="<?php echo base_url()?>index.php/connexion/test_login">
+				<form method="post" class="marge" action="<?php echo base_url()?>	index.php/connexion/test_login">
 
 					<input placeholder="Login" class="form-control" name="login"
 						type="text" required /> <br> <input placeholder="Mot de passe"
@@ -49,15 +49,16 @@ $(document).ready(function(){
 	<!-- /.modal-dialog -->
 </div>
 
-<div class="" style=" margin-top:100px; clear:both;" >
+<div class="" style=" margin-top:50px;" > </div>
+<div>
 
-	<div class=" col-sm-4 " style="margin-left:0px">
-              <img class="img-responsive" style="display: block;margin-left: auto;margin-right: auto;border-radius:25px;" src="<?php echo base_url()?>assets/pictures/interactive_meeting.jpg" />
+	<div class=" col-sm-4 test">
+              <img class="img-responsive img_style1" style="" src="<?php echo base_url()?>assets/pictures/interactive_meeting.jpg" />
     </div>
-	<div class=" col-sm-7 well well-lg" style=" margin:10px;border-radius:15px;" >
+	<div class=" col-sm-7 well well-lg" style=" margin:10px;border-radius:15px;" name="description" >
                         <h4>Description</h4>
                         <p>Edusmart est un outil d'interaction multiplateforme qui vous permettra d'animer vos r&eacute;unions de maniere interactive et d'en conserver un historique. Int&eacute;grant de nombreuses fonctionnalit&eacute;s, cet outil vous permettra de r&eacute;aliser des sondages et questionnaires de mani&egrave;re simple et intuitive. </p>
                         <p>S&eacute;curis&eacute; &agrave; l'aide d'un VPN local sur GL-inet et int&eacute;grant le cryptage automatique des donn&eacute;es qui transitent, ce module pourra &ecirc;tre utilis&eacute; lors de r&eacute;union confidentielles en toute s&eacute;curit&eacute;.</p>
-                         </div>
-	</div>
+    </div>
+</div>
 

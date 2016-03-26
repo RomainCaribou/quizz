@@ -28,7 +28,7 @@ class connexion extends CI_Controller {
 		else 
 		{
 			$data['res'] = 1; /*cree la variable res et on test avec isset si elle existe*/
-			$this->template->write_view('content','homepage/identification',$data); /*a supprimer : test*/
+			$this->template->write_view('content','homepage/identification',$data); 
 		}
 		$this->template->render();
 	}
