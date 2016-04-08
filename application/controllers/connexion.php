@@ -32,4 +32,27 @@ class connexion extends CI_Controller {
 		}
 		$this->template->render();
 	}
+	
+	public function creer()
+	{
+		$this->template->write_view('content','v_quizz/create_options');
+		$this->template->render();
+	
+	}
+	
+	public function new_quizz()
+	{
+		$data["nom"]= $this->input->post('nomquizz');
+		$data["type"]= $this->input->post('type');
+		$data["affichage_questions"]= $this->input->post('affichage_questions');
+		$data["affichage_reponses"]= $this->input->post('affichage_reponses');
+		$data["reponse_multiple"]= $this->input->post('reponse_multiple');
+		$data["timer"]= $this->input->post('timer');
+		$data["affichage_resultats"]= $this->input->post('affichage_resultats');
+		$data["avec_qrcode"]= $this->input->post('avec_qrcode');
+		$data["justification"]= $this->input->post('justification');
+		
+		$this->md_quizz->insert($data);
+	
+	}
 }

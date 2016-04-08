@@ -16,7 +16,7 @@ class test extends CI_Controller {
 	}
 	public function fct(){
 
-		$data['tab_etudiant']= $this->md_etudiant->getall();
+		$data['tab_etudiant']= $this->md_etudiant->getall(); 
 		$this->load->view('page_test',$data);
 
 		

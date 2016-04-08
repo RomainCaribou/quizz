@@ -58,7 +58,8 @@ $(document).ready(function(){
 	<div class=" col-sm-7 well well-lg" style=" margin:10px;border-radius:15px;" name="description" >
                         <h4>Description</h4>
                         <p>Edusmart est un outil d'interaction multiplateforme qui vous permettra d'animer vos r&eacute;unions de maniere interactive et d'en conserver un historique. Int&eacute;grant de nombreuses fonctionnalit&eacute;s, cet outil vous permettra de r&eacute;aliser des sondages et questionnaires de mani&egrave;re simple et intuitive. </p>
-                        <p>S&eacute;curis&eacute; &agrave; l'aide d'un VPN local sur GL-inet et int&eacute;grant le cryptage automatique des donn&eacute;es qui transitent, ce module pourra &ecirc;tre utilis&eacute; lors de r&eacute;union confidentielles en toute s&eacute;curit&eacute;.</p>
+                        <p>S&eacute;curis&eacute; &agrave; l'aide d'un VPN local sur GL-inet et int&eacute;grant le cryptage automatique des donn&eacute;es qui transitent, ce module pourra &ecirc;tre utilis&eacute; lors de r&eacute;unions confidentielles en toute s&eacute;curit&eacute;.</p>
     </div>
 </div>
+
 
