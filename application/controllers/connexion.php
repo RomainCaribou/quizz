@@ -43,14 +43,14 @@ class connexion extends CI_Controller {
 	
 	public function new_quizz()
 	{
-		$data["nom"]= $this->input->post('nomquizz');
-		$data["type"]= $this->input->post('type');
-		$data["affichage_questions"]= $this->input->post('affichage_questions');
-		$data["affichage_reponses"]= $this->input->post('affichage_reponses');
+		$data["quiz_nom"]= $this->input->post('nomquizz');
+		$data["type_quiz"]= $this->input->post('type');
+		$data["affichage_question"]= $this->input->post('affichage_questions');
+		$data["affichage_reponse"]= $this->input->post('affichage_reponses');
 		$data["reponse_multiple"]= $this->input->post('reponse_multiple');
-		$data["timer"]= $this->input->post('timer');
-		$data["affichage_resultats"]= $this->input->post('affichage_resultats');
-		$data["avec_qrcode"]= $this->input->post('avec_qrcode');
+		$data["quiz_timer"]= $this->input->post('timer');
+		$data["affichage_resultat"]= $this->input->post('affichage_resultats');
+		$data["qr_code"]= $this->input->post('avec_qrcode');
 		$data["justification"]= $this->input->post('justification');
 		
 		$this->md_quizz->insert($data);
