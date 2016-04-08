@@ -59,7 +59,8 @@ $template['active_template'] = 'default';
 $template['default']['template'] = 'doss_template/template';
 $template['default']['regions'] = array(
 		'header',
-		'content'
+		'content',
+		'bouton_header'
 );
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';

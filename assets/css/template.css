@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+@media screen and (max-width: 400px){
+	div.dataTables_length, div.dataTables_filter
+	{
+	    text-align: center;
+	    float: left;
+	}
+}
+.no-margin-top{
+	margin-top: 0px !important;
+}
+
+.no-margin-left
+{
+	margin-left: 0px !important;
+}
