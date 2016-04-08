@@ -109,14 +109,14 @@
 			</div>
 
 			<div class="modal fade" id="modal_deconnexion" tabindex="-1"
-				role="dialog" aria-labelledby="modal_deconnexion_label" aria-hidden="true">
+				role="dialog" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content col-xs-8	col-xs-offset-2"
 						style="margin-top: 50px">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
 								aria-hidden="true">&times;</button>
-							<h4 class="modal-title " id="modal_deconnexion_label">Deconnexion</h4>
+							<h4 class="modal-title ">Deconnexion</h4>
 						</div>
 						<div class="modal-body">
 
@@ -126,7 +126,7 @@
 
 						<div class="modal-footer">
 							<!--<button class="btn btn-default center-block" name=""  onclick="<?php echo base_url()?>	index.php/connexion">Deconnexion</button> -->
-							<a href="<?php echo base_url()?>connexion/deconnexion"
+							<a href="<?php echo base_url()?>index.php/connexion/deconnexion"
 								class="btn btn-md btn-danger btn-block">Deconnexion</a>
 						</div>
 					</div>

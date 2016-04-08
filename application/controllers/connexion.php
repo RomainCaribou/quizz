@@ -21,7 +21,7 @@ class connexion extends CI_Controller {
 			} else if ($ok [1] == "animateur") {
 				$user_detail = $ok [2] [0];
 				$this->session->set_userdata ( 'logged_in', $user_detail );
-				redirect('quiz/liste_quiz');
+				redirect('quizz/liste_quizz');
 			}
 		} else {
 			$data ['res'] = 1; /* cree la variable res et on test avec isset si elle existe */
@@ -29,31 +29,9 @@ class connexion extends CI_Controller {
 		}
 		$this->template->render ();
 	}
+	
 	public function deconnexion() {
 		$this->session->unset_userdata('logged_in');
 		$this->index();
-	}
-	
-	public function creer()
-	{
-		$this->template->write_view('content','v_quizz/create_options');
-		$this->template->render();
-	
-	}
-	
-	public function new_quizz()
-	{
-		$data["quiz_nom"]= $this->input->post('nomquizz');
-		$data["type_quiz"]= $this->input->post('type');
-		$data["affichage_question"]= $this->input->post('affichage_questions');
-		$data["affichage_reponse"]= $this->input->post('affichage_reponses');
-		$data["reponse_multiple"]= $this->input->post('reponse_multiple');
-		$data["quiz_timer"]= $this->input->post('timer');
-		$data["affichage_resultat"]= $this->input->post('affichage_resultats');
-		$data["qr_code"]= $this->input->post('avec_qrcode');
-		$data["justification"]= $this->input->post('justification');
-		
-		$this->md_quizz->insert($data);
-	
 	}
 }

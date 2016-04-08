@@ -1,7 +1,7 @@
 <div style="margin:20px;"></div>
 <div>
 
-<form method="post" class="marge" action="<?php echo base_url()?>	index.php/connexion/test_login">>
+<form method="post" class="marge" action="<?php echo base_url()?>	quizz/new_quizz">
 
 
 	<div class=" text-center" style="margin-bottom:40px;"> 
@@ -28,17 +28,17 @@
                 <div>
                 	<div class="radio">
                        <label>
-                              <input type="radio" name="type" id="optionsRadios1" value="sondage" checked="">Sondage
+                              <input type="radio" name="type" id="optionsRadios1" value="0" checked="">Sondage
                         </label>
                     </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="type" id="optionsRadios1" value="prive">Prive
+                                                    <input type="radio" name="type" id="optionsRadios1" value="1">Prive
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="type" id="optionsRadios2" value="test">Test
+                                                    <input type="radio" name="type" id="optionsRadios2" value="2">Test
                                                 </label>
                                             </div>
                                             </div>
@@ -50,12 +50,12 @@
                                          
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="affichage_questions" value="non" checked="">Non
+                                                    <input type="radio" name="affichage_questions" value="0" checked="">Non
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="affichage_questions"  value="oui">Oui
+                                                    <input type="radio" name="affichage_questions"  value="1">Oui
                                                 </label>
                                             </div>
   	 </div>
@@ -67,12 +67,12 @@
                                          
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="affichage_reponses" value="non" checked="">Non
+                                                    <input type="radio" name="affichage_reponses" value="0" checked="">Non
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="affichage_reponses"  value="oui">Oui
+                                                    <input type="radio" name="affichage_reponses"  value="1">Oui
                                                 </label>
                                             </div>
   	 </div>
@@ -83,12 +83,12 @@
                                          
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="reponse_multiple" value="non" checked="">Non
+                                                    <input type="radio" name="reponse_multiple" value="0" checked="">Non
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="reponse_multiple"  value="oui">Oui
+                                                    <input type="radio" name="reponse_multiple"  value="1">Oui
                                                 </label>
                                             </div>
   	 </div>
@@ -100,17 +100,17 @@
                                          
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="timer" value="global" checked="">Global
+                                                    <input type="radio" name="timer" value="1" checked="">Global
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="timer"  value="individuel">Individuel
+                                                    <input type="radio" name="timer"  value="2">Individuel
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="timer"  value="non">Non
+                                                    <input type="radio" name="timer"  value="0">Non
                                                 </label>
                                             </div>
   	 </div>
@@ -121,12 +121,12 @@
                                          
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="affichage_resultats" value="non" checked="">Non
+                                                    <input type="radio" name="affichage_resultats" value="0" checked="">Non
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="affichage_resultats"  value="oui">Oui
+                                                    <input type="radio" name="affichage_resultats"  value="1">Oui
                                                 </label>
                                             </div>
   	 </div>
@@ -139,12 +139,12 @@
                                          
                                           <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="avec_qrcode" value="non" checked="">Non
+                                                    <input type="radio" name="avec_qrcode" value="0" checked="">Non
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="avec_qrcode"  value="oui">Oui
+                                                    <input type="radio" name="avec_qrcode"  value="1">Oui
                                                 </label>
                                             </div>
   	 </div>
@@ -155,12 +155,12 @@
                                          
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="justification" value="non" checked="">Non
+                                                    <input type="radio" name="justification" value="0" checked="">Non
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="justification"  value="oui">Oui
+                                                    <input type="radio" name="justification"  value="1">Oui
                                                 </label>
                                             </div>
   	 </div>
@@ -168,47 +168,46 @@
 	
 	
 	
-	
+	<div class="col-xs-12" style="margin-bottom:20px;">
+ 	 <div class="col-xs-6 ">
+ <button class="btn btn-default btn-lg  pull-left col-xs-12" type="submit" name="" style="max-width:300px;" >Envoyer</button>  
+	 </div>
+	 <div class="col-xs-6">
+              <a class="btn btn-primary btn-md btn-lg  col-xs-12" style="max-width:300px;"  data-toggle="modal"
+					data-target="#modal_deconnexion_2">Annuler</a>     
+	</div>       
+					
+</div>  
 	
 	
 	
 	
   </div>  
   
- <div class="col-sm-12" style="margin-bottom:50px;">
- <button class="btn btn-default center-block col-sm-5" type="submit" name="" style=" width:180px;" >Envoyer</button>  
- <button class="btn btn-primary btn-md col-sm-5"
-					style="margin-right: 10px; width:180px;" data-toggle="modal"
-					data-target="#modal_deconnexion">Retour</button>            
-					
-</div>               
+ 
+             
  </form>
 
 
-
-			
 			
 
-			<div class="modal fade" id="modal_deconnexion" tabindex="-1"
+			<div class="modal fade" id="modal_deconnexion_2" tabindex="-1"
 				role="dialog" aria-labelledby="modal_deconnexion_label" aria-hidden="true">
 				<div class="modal-dialog">
-					<div class=""
-						style="margin-top: 50px">
+					<div class="modal-content" style="margin-top: 50px">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
 								aria-hidden="true">&times;</button>
-							<h4 class="modal-title " id="modal_deconnexion_label">Deconnexion</h4>
+							<h4 class="modal-title " id="modal_deconnexion_label">Annuler</h4>
 						</div>
 						<div class="modal-body">
 
-							<p>Etes vous sur de vouloir vous deconnecter ?</p>
+							<p>Etes vous sur de vouloir annuler la création du quizz ? Toutes les données rentrées seront perdues</p>
 
 						</div>
 
 						<div class="modal-footer">
-							<!--<button class="btn btn-default center-block" name=""  onclick="<?php echo base_url()?>	index.php/connexion">Deconnexion</button> -->
-							<a href="<?php echo base_url()?>connexion/deconnexion"
-								class="btn btn-md btn-danger btn-block">Deconnexion</a>
+							<a href="<?php echo base_url()?>quizz/liste_quizz" class="btn btn-md btn-danger btn-block">Annuler</a>
 						</div>
 					</div>
 					<!-- /.modal-content -->
