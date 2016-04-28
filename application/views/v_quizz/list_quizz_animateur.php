@@ -7,7 +7,7 @@
 				<!-- /.panel-heading -->
 				<div class="panel-body">
 					<div class="table-responsive">
-						<table
+						<table id="liste_quiz_tab"
 							class="datatable table table-striped table-bordered table-hover">
 							<thead>
 								<tr>

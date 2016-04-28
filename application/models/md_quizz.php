@@ -13,6 +13,7 @@ class Md_quizz extends CI_Model{
 	function insert($data){
 		
 		$this->db->insert('quizz',$data);
+		return $this->db->insert_id();
 	}
 	
 	function get_all_quiz($animateur_id){
@@ -23,6 +24,11 @@ class Md_quizz extends CI_Model{
 	function delete_quizz($quizz_id){
                 $this->db->where('quiz_id', $quizz_id);
                 $this->db->delete('quizz');
+	}
+	function get_detail_quiz($id_quiz)
+	{
+		$res = $this->db->get_where('quizz',array('quiz_id'=>$id_quiz));
+		return $res->result_array();
 	}
 }
 ?>

@@ -1,3 +1,58 @@
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#btn_ajout_quiz").click(function(){
+
+		var newquiz = {
+				nomquizz : $('#nomquizz').val(),
+				type : $('input[name=type]:checked').val(),
+				affichage_questions : $('input[name=affichage_questions]:checked').val(),
+				affichage_reponses : $('input[name=affichage_reponses]:checked').val(),
+				reponse_multiple : $('input[name=reponse_multiple]:checked').val(),
+				timer : $('input[name=timer]:checked').val(),
+				affichage_resultats : $('input[name=affichage_resultats]:checked').val(),
+				avec_qrcode : $('input[name=avec_qrcode]:checked').val(),
+				justification : $('input[name=justification]:checked').val(),
+				ajax : '1'
+		};
+
+		$.ajax({
+				url: "<?php echo base_url('quizz').'/new_quizz' ?>",
+				type: 'POST',
+				async : false,
+				data: newquiz,
+				success: function(res) {
+					 if(res)
+	                    {
+						 	var response = JSON.parse(res)[0];
+						 	id = response.quiz_id;
+		                    cell_action = "<a data-toggle='modal' data-target='#modal_supprimer"+id+"' class='btn btn-danger btn-circle'>"+
+		                    " <span class='glyphicon glyphicon-remove' aria-hidden='true' data-toggle='tooltip' data-placement='bottom' title='Supprimer ce quiz'></span> </a>"+
+		                    " <a class='btn btn-warning btn-circle' data-toggle='tooltip' data-placement='bottom' title='Modifier ce quiz'>"+
+		                    " <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> </a> "+
+		                    "<a class='btn btn-info btn-circle' data-toggle='modal' data-target='#modal-detail-"+id+"'>"+
+		                    "<span data-toggle='tooltip' data-placement='bottom' title='D&eacute;tail de ce quiz' class='glyphicon glyphicon-search' aria-hidden='true'></span>"+
+							"</a> <a class='btn btn-success btn-circle' data-toggle='tooltip' data-placement='bottom' title='Lancer ce quiz'>"+ 
+							"<span class='glyphicon glyphicon-play' aria-hidden='true'></span> </a>";
+		                    var t = $('#liste_quiz_tab').DataTable();
+		                    t.row.add( [
+		                                response.quiz_id,
+		                                response.quiz_nom,
+		                                response.quiz_date_creation,
+		                                cell_action
+		                    ] ).draw( false );
+		                    $("#modal_creation").modal('hide');
+		                    if ((response.affichage_question=="0") && (response.affichage_reponse=="0"))
+		                    {
+		                    	$("#Modalquestion").modal('show');
+		                    }
+	                    }
+				}
+		});
+	});
+});
+	
+</script>
 <div class="col-sm-3 col-sm-pull-3">
 	<a data-toggle="modal" data-target="#modal_creation"
 		class="btn btn-md btn-info btn-outline btn-block pull-right"
@@ -21,8 +76,8 @@
 								<label>Nom du Quizz : </label>
 							</div>
 							<input class="form-control col-md-3 "
-								placeholder="Nom du Quizz ?" name="nomquizz"
-								style="max-width: 250px;" /required>
+								placeholder="Nom du Quizz ?" id="nomquizz" name="nomquizz"
+								style="max-width: 250px;" required>
 						</div>
 						<div class="col-xs-12" style="margin-bottom: 20px;"
 							name="1ereligne">
@@ -169,8 +224,7 @@
 			<div class="modal-footer">
 				<div class="col-xs-12">
 					<div class="col-xs-6 ">
-						<button class="btn btn-lg btn-info btn-outline  pull-left col-xs-12"
-							onclick="valider_formulaire()" name="" style="max-width: 300px;">Envoyer</button>
+						<button class="btn btn-lg btn-info btn-outline  pull-left col-xs-12" id="btn_ajout_quiz" style="max-width: 300px;">Envoyer</button>
 					</div>
 					<div class="col-xs-6">
 						<a class="btn btn-primary btn-md btn-lg  col-xs-12"

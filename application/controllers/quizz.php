@@ -13,6 +13,7 @@ class Quizz extends CI_Controller {
 		$animateur_id = $this->session->userdata('logged_in')['animateur_ID'];
 		$data['quiz_admin'] = $this->md_quizz->get_all_quiz($animateur_id);
 		$this->template->write_view('content', 'v_quizz/list_quizz_animateur', $data);
+		$this->template->write_view('content', 'v_quizz/create_general_quizz', $data);
 		$this->template->write_view('bouton_header','v_quizz/btn_ajout_quiz');
 		$this->template->render();
 	}
@@ -37,8 +38,10 @@ class Quizz extends CI_Controller {
 		$data["affichage_resultat"]= $this->input->post('affichage_resultats');
 		$data["qr_code"]= $this->input->post('avec_qrcode');
 		$data["justification"]= $this->input->post('justification');
-		$this->md_quizz->insert($data);
-		redirect('quizz/liste_quizz');
+		$id = $this->md_quizz->insert($data);
+		$detail = $this->md_quizz->get_detail_quiz($id);
+		echo json_encode ( $detail );
+		return true;
 	}
 	
 	public function delete_quizz($quizz_id)
