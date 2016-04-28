@@ -13,13 +13,9 @@
 				<form method="post" action="">
 
 					<label>Enonc&eacute;</label> 
-					<div class="col-xs-12">
 					<input
 						placeholder="Veuillez rentrer l'&eacute;nonc&eacute;" class="form-control"
 						name="enonce" type="text" required /> 
-					 <input type="radio" name="reponse_multiple" value="0"
-										checked="">
-					</div>
 					
 					<br> 
 					<label>R&eacute;ponse A</label>
