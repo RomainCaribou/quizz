@@ -7,6 +7,8 @@ class connexion extends CI_Controller {
 	}
 	public function index() {
 		$this->template->write_view ( 'content', 'homepage/identification' );
+		//$this->template->write_view ( 'content', 'v_quizz/create_general_quizz' );
+		
 		$this->template->render ();
 	}
 	public function test_login() {

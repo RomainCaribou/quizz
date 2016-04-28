@@ -22,7 +22,7 @@
 							</div>
 							<input class="form-control col-md-3 "
 								placeholder="Nom du Quizz ?" name="nomquizz"
-								style="max-width: 250px;">
+								style="max-width: 250px;" /required>
 						</div>
 						<div class="col-xs-12" style="margin-bottom: 20px;"
 							name="1ereligne">
@@ -169,7 +169,7 @@
 			<div class="modal-footer">
 				<div class="col-xs-12">
 					<div class="col-xs-6 ">
-						<button class="btn btn-default btn-lg  pull-left col-xs-12"
+						<button class="btn btn-lg btn-info btn-outline  pull-left col-xs-12"
 							onclick="valider_formulaire()" name="" style="max-width: 300px;">Envoyer</button>
 					</div>
 					<div class="col-xs-6">
