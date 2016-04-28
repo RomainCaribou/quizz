@@ -24,5 +24,11 @@ class Md_quizz extends CI_Model{
                 $this->db->where('quiz_id', $quizz_id);
                 $this->db->delete('quizz');
 	}
+	
+function update($data){	
+	$this->db->where('quiz_id', $data['quiz_id']);
+	$this->db->update('quizz',$data);
+}
+	
 }
 ?>

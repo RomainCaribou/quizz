@@ -13,6 +13,7 @@ class Quizz extends CI_Controller {
 		$animateur_id = $this->session->userdata('logged_in')['animateur_ID'];
 		$data['quiz_admin'] = $this->md_quizz->get_all_quiz($animateur_id);
 		$this->template->write_view('content', 'v_quizz/list_quizz_animateur', $data);
+		$this->template->write_view('content', 'v_quizz/create_basic_quizz_popup');
 		$this->template->write_view('bouton_header','v_quizz/btn_ajout_quiz');
 		$this->template->render();
 	}
@@ -46,4 +47,14 @@ class Quizz extends CI_Controller {
 		$this->md_quizz->delete_quizz($quizz_id);
 		redirect('quizz/liste_quizz');
 	}
+	
+	public function create_basic_questions()
+	{
+		$data["quiz_nb_quest"]=$this->input->post('nb_quest');
+		$data["value_timer"]= $this->input->post('timer');
+		$data["quiz_id"]= $this->input->post('quizz_id');
+		$this->md_quizz->update($data);
+		 
+	}
+
 }

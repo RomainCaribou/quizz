@@ -26,3 +26,11 @@ function get_quiz_questions($quiz_id){
 	$questions = $ci->md_question->get_quiz_question($quiz_id);
 	return $questions;
 }
+
+function get_details($quizz_id){
+	
+	$ci = & get_instance();
+	$ci->load->model('md_quizz');
+	$details = $ci->md_question->get_details_quizz($quizz_id);
+	return $details;
+}

@@ -1,3 +1,8 @@
+<<script type="text/javascript">
+<!--
+
+//-->
+</script>
 <div class="col-sm-3 col-sm-pull-3">
 	<a data-toggle="modal" data-target="#modal_creation"
 		class="btn btn-md btn-info btn-outline btn-block pull-right"

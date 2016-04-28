@@ -9,4 +9,7 @@ class Quiz extends CI_Controller {
 		$questions = $this->md_question->get_quiz_question($quiz_id);
 		return $questions;
 	}
+	
+	
 }
+
