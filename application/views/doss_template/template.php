@@ -34,6 +34,11 @@
 	href="<?php  echo base_url()?>assets/bower_components/datatables-responsive/css/responsive.dataTables.css"
 	rel="stylesheet">
 
+<!-- icheck blue CSS -->
+<link
+	href="<?php  echo base_url()?>assets/bower_components/icheck/skins/square/blue.css"
+	rel="stylesheet">
+
 <!-- Custom CSS -->
 <link href="<?php  echo base_url()?>assets/dist/css/sb-admin-2.css"
 	rel="stylesheet">
@@ -156,6 +161,10 @@
 	<script
 		src="<?php  echo base_url()?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+	<!-- Icheck JavaScript -->
+	<script
+		src="<?php  echo base_url()?>assets/bower_components/icheck/icheck.js"></script>
+
 	<!-- Metis Menu Plugin JavaScript -->
 	<script
 		src="<?php  echo base_url()?>assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
@@ -176,7 +185,14 @@
     </script>
 
 
-
+	<script>
+	$(document).ready(function(){
+	  $('input').iCheck({
+	    checkboxClass: 'icheckbox_square-blue',
+	    radioClass: 'iradio_square-blue'
+	  });
+	});
+	</script>
 
 </body>
 
