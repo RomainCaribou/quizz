@@ -4,6 +4,7 @@ class Quizz extends CI_Controller {
 	function __construct() {
 		parent::__construct ();
 		$this->load->model('md_quizz');
+		$this->load->model('md_question');
 	}
 	
 	public function index(){
@@ -57,7 +58,13 @@ class Quizz extends CI_Controller {
 		$data["value_timer"]= $this->input->post('timer');
 		$data["quiz_id"]= $this->input->post('quizz_id');
 		$this->md_quizz->update($data);
+		
+		$data2["tps_reponse"]= $data["value_timer"];
+		$data2["quizz_id"]= $data["quiz_id"];
+		$this->md_question->insert_basic_question($data2,$data["quiz_nb_quest"]);
 		 
 	}
+	
+
 
 }

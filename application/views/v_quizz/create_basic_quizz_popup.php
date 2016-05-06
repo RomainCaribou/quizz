@@ -20,7 +20,7 @@
 					<input placeholder="Secondes par question ?"
 						class="form-control" name="timer" type="int" required /> <br> 
 					<input 
-						class="form-control" name="quizz_id" type="hidden" value="33"  />
+						class="form-control" name="quizz_id" id="id_quiz_modale_quest_basic" type="hidden" />
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-default center-block" type="submit" name="">Valider</button>

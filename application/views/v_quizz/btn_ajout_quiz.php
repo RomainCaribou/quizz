@@ -46,9 +46,11 @@ $(document).ready(function() {
 		                    if ((response.affichage_question=="0") && (response.affichage_reponse=="0"))
 		                    {
 		                    	$("#myModal_basic_quizz").modal('show');
+		                    	$("#id_quiz_modale_quest_basic").attr("value",id);
 		                    }else{
 
 		                    	$("#Modalquestion").modal('show');
+		                    	$("#id_quiz_modale_quest").attr("value",id);
 		                    }
 	                    }
 				}
