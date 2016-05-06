@@ -46,6 +46,9 @@ $(document).ready(function() {
 		                    if ((response.affichage_question=="0") && (response.affichage_reponse=="0"))
 		                    {
 		                    	$("#myModal_basic_quizz").modal('show');
+		                    }else{
+
+		                    	$("#Modalquestion").modal('show');
 		                    }
 	                    }
 				}

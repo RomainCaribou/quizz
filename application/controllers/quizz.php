@@ -14,6 +14,7 @@ class Quizz extends CI_Controller {
 		$data['quiz_admin'] = $this->md_quizz->get_all_quiz($animateur_id);
 		$this->template->write_view('content', 'v_quizz/list_quizz_animateur', $data);
 		$this->template->write_view('content', 'v_quizz/create_basic_quizz_popup');
+		$this->template->write_view('content', 'v_quizz/create_general_quizz');
 		$this->template->write_view('bouton_header','v_quizz/btn_ajout_quiz');
 		$this->template->render();
 	}
