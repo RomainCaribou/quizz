@@ -62,7 +62,7 @@ $("#submit_form").click(function(){
 	style="overflow-y: auto;" aria-labelledby="myModalLabel"
 	aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="modal-content col-xs-8	col-xs-offset-2"
+		<div class="modal-content col-xs-10	col-xs-offset-1 col-md-8 col-md-offset-2"
 			style="margin-top: 50px">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
@@ -71,30 +71,42 @@ $("#submit_form").click(function(){
 			</div>
 			<div class="modal-body">
 				<form method="post" id="form_quest"
-					action="<?php echo base_url()?>	index.php/question/set_question_quizz/">
-					<input type="text" value="" id="id_quiz_modale_quest"
+					action="<?php echo base_url()?>	index.php/quizz/set_question_quizz/">
+					<input type="text" value="" id="id_quiz_modale_quest" style="display:none;"
 						name="id_quiz" />
 					<div class="clonage" id="clonage_1">
-						<label>Question 1 </label> <br> <br> <label>Enonc&eacute;</label>
+						<label>Question 1 </label> <br> <br> 
+						
+						
+						<div class="div_enonce">
+						<label>Enonc&eacute;</label>
 						<input placeholder="Veuillez rentrer l'&eacute;nonc&eacute;"
-							class="form-control enonce" name="enonce_1" type="text" required />
+							class="form-control enonce" name="enonce_1" type="text"  />
+						</div>
+						
+						
+						<div class="div_reponse">
 						<br> <label>R&eacute;ponse A</label> <input
 							placeholder="Veuillez rentrer la r&eacute;ponse A"
-							class="form-control ra" name="ra_1" type="text" required /> <br>
+							class="form-control ra" name="ra_1" type="text"  /> <br>
 						<label>R&eacute;ponse B</label> <input
 							placeholder="Veuillez rentrer la r&eacute;ponse B"
-							class="form-control rb" name="rb_1" type="text" required /> <br>
+							class="form-control rb" name="rb_1" type="text"  /> <br>
 						<label>R&eacute;ponse C</label> <input
 							placeholder="Veuillez rentrer la r&eacute;ponse C"
-							class="form-control rc" name="rc_1" type="text" required /> <br>
+							class="form-control rc" name="rc_1" type="text"  /> <br>
 						<label>R&eacute;ponse D</label> <input
 							placeholder="Veuillez rentrer la r&eacute;ponse D"
-							class="form-control rd" name="rd_1" type="text" required /> <br>
+							class="form-control rd" name="rd_1" type="text"  /> <br>
+							</div>
 						<div>
+						
+						<div class="div_timer">
 							<label>Timer :</label> <input class="form-control timer"
 								name="timer_1" type="text" value="30" required /> <br>
-
+</div>
 							<div>
+							<div class="div_bonne_reponse">
 								<label>R&eacute;ponse : </label><br>
 								<div class="col-xs-3 col-md-2">
 									<label class="checkbox-inline" style="padding-left: 0px;"><input
@@ -106,24 +118,30 @@ $("#submit_form").click(function(){
 								</div>
 								<div class="col-xs-3 col-md-2">
 									<label class="checkbox-inline" style="padding-left: 0px;"><input
-										class="rc_ok" name="rc_ok_1" type="checkbox">C</label>
+										class=" rc_ok" name="rc_ok_1" type="checkbox">C</label>
 								</div>
 								<div class="col-xs-3 col-md-2">
 									<label class="checkbox-inline" style="padding-left: 0px;"><input
-										class="rd_ok" name="rd_ok_1" type="checkbox">D</label>
+										class=" rd_ok" name="rd_ok_1" type="checkbox">D</label>
+								</div>
 								</div>
 								<br>
+
 								<div style="margin-top:25px;" class="clearfix"></div>
+
 
 							</div>
 						</div>
 
 					</div>
 
-					<button type="button" class="btn btn-primary center-block"
+						
+											 <div class="sm-col-12" style="margin-bottom:10px;">
+					<button  type="button" class="xs-col-12 sm-col-6 btn btn-primary center-block " style="margin-top:20px; margin-bottom:5px;"
 						id="cloneur">Ajouter question</button>
-					<button type="button" class="btn btn-primary center-block"
-						id="supp">Moins</button>
+					<button type="button" class="xs-col-12 sm-col-6 btn btn-danger center-block "
+						id="supp">Supprimer question</button>
+						</div>
 
 					<input placeholder="numero de question" class="form-control"
 						id="num_question" name="nb_question" type="text"

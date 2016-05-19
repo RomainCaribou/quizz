@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+
+	
+
+@media screen and (min-width: 960px) {
+.validation{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 959px) and (min-width: 600px) {
+.validation{
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 599px) and (min-width: 50px) {
+.validation{
+    font-size: 5vw;
+  }
+}

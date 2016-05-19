@@ -17,15 +17,19 @@ $(document).ready(function() {
 				ajax : '1'
 		};
 
+		alert(newquiz.affichage_questions);
+
 		$.ajax({
 				url: "<?php echo base_url('quizz').'/new_quizz' ?>",
 				type: 'POST',
 				async : false,
 				data: newquiz,
 				success: function(res) {
+
 					 if(res)
 	                    {
-						 	var response = JSON.parse(res)[0];
+
+						 	var response = JSON.parse(res);
 						 	id = response.quiz_id;
 		                    cell_action = "<a data-toggle='modal' data-target='#modal_supprimer"+id+"' class='btn btn-danger btn-circle'>"+
 		                    " <span class='glyphicon glyphicon-remove' aria-hidden='true' data-toggle='tooltip' data-placement='bottom' title='Supprimer ce quiz'></span> </a>"+
@@ -36,6 +40,7 @@ $(document).ready(function() {
 							"</a> <a class='btn btn-success btn-circle' data-toggle='tooltip' data-placement='bottom' title='Lancer ce quiz'>"+ 
 							"<span class='glyphicon glyphicon-play' aria-hidden='true'></span> </a>";
 		                    var t = $('#liste_quiz_tab').DataTable();
+
 		                    t.row.add( [
 		                                response.quiz_id,
 		                                response.quiz_nom,
@@ -52,6 +57,23 @@ $(document).ready(function() {
 		                    	$("#Modalquestion").modal('show');
 		                    	$("#id_quiz_modale_quest").attr("value",id);
 		                    }
+		                    if (response.affichage_question=="0")
+		                    {
+			                    $(".div_enonce").hide();
+			                }
+		                    if (response.affichage_reponse=="0")
+		                    {
+			                    $(".div_reponse").hide();
+			                }
+			                
+		                    if (response.timer=="0"||response.timer=="1")
+		                    {
+			                    $(".div_timer").hide();
+			                }
+		                    if (response.type=="0")
+		                    {
+			                    $(".div_bonne_reponse").hide();
+			                }
 	                    }
 				}
 		});

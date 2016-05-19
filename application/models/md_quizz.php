@@ -29,12 +29,20 @@ class Md_quizz extends CI_Model{
 function update($data){	
 	$this->db->where('quiz_id', $data['quiz_id']);
 	$this->db->update('quizz',$data);
-}
+	}
 	
 	function get_detail_quiz($id_quiz)
 	{
 		$res = $this->db->get_where('quizz',array('quiz_id'=>$id_quiz));
-		return $res->result_array();
+		return $res->result_array()[0];
 	}
+	
+	function get_question_reponse($id_quiz)
+	{
+		
+		$res=get_detail_quiz($id_quiz);
+
+	}
+	
 }
 ?>

@@ -5,16 +5,37 @@ class Md_question extends CI_Model {
 	function __construct() {
 		parent::__construct ();
 	}
+	
+	
+	
 	function get_quiz_question($quiz_id) {
 		$res = $this->db->get_where ( 'questions', array (
 				'quizz_id' => $quiz_id 
 		) );
 		return $res->result_array ();
 	}
+	
+	
+	
 	function insert_question($data) {
 		$this->db->insert ( 'questions', $data );
 		return $this->db->insert_id ();
 	}
+	
+	function update_question($data) {
+		$this->db->where('quest_id', $data['quest_id']);
+		$this->db->update ( 'questions', array (
+				"question" => $data ["question"],
+				"tps_reponse" => $data ["tps_reponse"] ));
+	}
+	
+	function delete_question($data) {
+		var_dump($data);
+		$this->db->where('quest_id', $data);
+		$this->db->delete ( 'questions');
+	}
+
+	
 	function insert_4reponses($data2) {
 		$this->db->insert ( 'reponses', array (
 				"quest_id" => $data2 ["quest_id"],
@@ -37,6 +58,8 @@ class Md_question extends CI_Model {
 				"valide" => $data2 ["reponse_d_ok"] 
 		) );
 	}
+	
+	
 	function insert_basic_question($data2, $nb_quest) {
 		for($i = 1; $i <= $nb_quest; $i ++) {
 			$this->db->insert ( 'questions', $data2 );

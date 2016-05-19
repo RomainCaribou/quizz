@@ -6,8 +6,9 @@ class connexion extends CI_Controller {
 		$this->load->model ( 'md_users', '', TRUE );
 	}
 	public function index() {
-		$this->template->write_view ( 'content', 'homepage/identification' );
-		//$this->template->write_view ( 'content', 'v_quizz/create_general_quizz' );
+		
+		$this->template->write_view ( 'content', 'homepage/homepage_logged_admin' );
+		//$this->template->write_view ( 'content', 'homepage/identification' );
 		
 		$this->template->render ();
 	}
