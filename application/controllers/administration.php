@@ -9,6 +9,28 @@ class administration extends CI_Controller {
 		$this->load->model('md_administration');
 	}
 	
+	public function index(){
+		$this->liste_quizz();
+	}
+	
+	public function liste_quizz(){
+
+		$data['quiz_admin'] = $this->md_quizz->getall();
+
+		$this->template->write_view('content', 'v_quizz/liste_quizz_admin', $data);
+		$this->template->write_view('content', 'v_quizz/create_basic_quizz_popup');
+		$this->template->write_view('content', 'v_quizz/create_general_quizz');
+		$this->template->write_view('content', 'homepage/homepage_logged_admin');
+		$this->template->write_view('bouton_header','v_quizz/btn_ajout_quiz');
+	
+		//		$this->template->write_view('content', 'v_quizz/quizz_validated');
+	
+	
+		$this->template->render();
+	}
+	
+	
+	
 	function add_user(){
 		$data["username"]=$this->input->post('username');
 		$data["nom"]=$this->input->post('nom');

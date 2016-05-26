@@ -7,7 +7,9 @@ class connexion extends CI_Controller {
 	}
 	public function index() {
 		
-		$this->template->write_view ( 'content', 'homepage/homepage_logged_admin' );
+		$this->template->write_view ( 'content', 'homepage/identification' );
+	//	redirect('administration/liste_quizz');
+		//$this->template->write_view ( 'content', 'v_quizz/liste_quizz_admin' );
 		//$this->template->write_view ( 'content', 'homepage/identification' );
 		
 		$this->template->render ();
@@ -25,6 +27,11 @@ class connexion extends CI_Controller {
 				$user_detail = $ok [2] [0];
 				$this->session->set_userdata ( 'logged_in', $user_detail );
 				redirect('quizz/liste_quizz');
+			}
+			else if ($ok [1] == "administrateur") {
+				$user_detail = $ok [2] [0];
+				$this->session->set_userdata ( 'logged_in', $user_detail );
+				redirect('administration/liste_quizz');
 			}
 		} else {
 			$data ['res'] = 1; /* cree la variable res et on test avec isset si elle existe */
