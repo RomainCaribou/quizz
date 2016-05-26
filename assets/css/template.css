@@ -14,3 +14,13 @@
 {
 	margin-left: 0px !important;
 }
+
+.rep_selected
+{
+	font-style: italic;
+	font-weight: 700;
+}
+.space_top
+{
+	margin-top: 2%;
+}

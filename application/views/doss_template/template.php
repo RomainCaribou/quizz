@@ -38,6 +38,10 @@
 <link
 	href="<?php  echo base_url()?>assets/bower_components/icheck/skins/square/blue.css"
 	rel="stylesheet">
+<link
+	href="<?php  echo base_url()?>assets/bower_components/icheck/skins/line/blue.css"
+	rel="stylesheet">
+<link href="<?php  echo base_url()?>assets/bower_components/icheck/skins/line/purple.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="<?php  echo base_url()?>assets/dist/css/sb-admin-2.css"
@@ -108,7 +112,7 @@
 		<div class="row" style="height: 40px; margin-top: 10px;">
 
 			<div class="col-sm-3 col-sm-push-9  ">
-				<button class="btn btn-primary btn-md pull-right"
+				<button class="btn btn-danger btn-md pull-right"
 					style="margin-right: 10px; margin-left: 10px;" data-toggle="modal"
 					data-target="#modal_deconnexion">Deconnexion</button>
 			</div>
@@ -187,7 +191,7 @@
 
 	<script>
 	$(document).ready(function(){
-	  $('input').iCheck({
+	  $('.square-blue').iCheck({
 	    checkboxClass: 'icheckbox_square-blue',
 	    radioClass: 'iradio_square-blue'
 	  });

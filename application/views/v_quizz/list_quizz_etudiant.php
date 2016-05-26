@@ -1,31 +1,56 @@
-<p>Vous etes log en etudiant ! genial !</p>
-
-
-
-<button class="btn btn-primary btn-md pull-right" style="margin-top:10px;margin-right:10px;"data-toggle="modal"
-	data-target="#myModal">Deconnexion</button>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content col-xs-8	col-xs-offset-2" style="margin-top:50px">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-hidden="true">&times;</button>
-				<h4 class="modal-title " id="myModalLabel">Deconnexion</h4>
-			</div>
-			<div class="modal-body">
-
-				<p> Etes vous sur de vouloir vous deconnecter ?</p>
-
-			</div>
-						
-			<div class="modal-footer">
-			<a href="<?php echo base_url()?>index.php/connexion" class="btn btn-md btn-danger btn-block">Deconnexion</a>
-				</form>
+<div id="page-wrapper" class="no-margin-left">
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Liste de vos quizs</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table id="liste_quiz_tab"
+							class="datatable table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>N&deg; Quiz</th>
+									<th>Nom du Quiz</th>
+									<th>Date de participation</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach ($quiz_et as $quiz): ?>
+								
+								<tr>
+									<td><?php echo $quiz['quiz_id']?></td>
+									<td><?php echo $quiz['quiz_nom']?></td>
+									<td>
+										<?php
+									/*
+									 * Cette fonction format_fr_date a été définie dans helper/utils_helper
+									 */
+									echo format_fr_date ( $quiz ['quiz_date_creation'] );
+									?>
+									</td>
+									<td align="center">
+										<a class="btn btn-primary" href="<?php echo base_url("quizz")."/recap_participation/".$quiz['lancement_quiz_id']?>">
+											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+											D&eacute;tail
+										</a>
+									</td>
+								</tr>
+								<?php endforeach;?>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!-- /.modal-content -->
 	</div>
-	<!-- /.modal-dialog -->
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        $('.datatable').dataTable();
+    });
+ </script>

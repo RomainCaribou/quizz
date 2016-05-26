@@ -27,7 +27,7 @@ $(document).ready(function() {
 	                    {
 						 	var response = JSON.parse(res)[0];
 						 	id = response.quiz_id;
-		                    cell_action = "<a data-toggle='modal' data-target='#modal_supprimer"+id+"' class='btn btn-danger btn-circle'>"+
+		                    cell_action = "<a id='delete_quiz_"+id+"' class='btn btn-danger btn-circle btn-delete-quiz'>"+
 		                    " <span class='glyphicon glyphicon-remove' aria-hidden='true' data-toggle='tooltip' data-placement='bottom' title='Supprimer ce quiz'></span> </a>"+
 		                    " <a class='btn btn-warning btn-circle' data-toggle='tooltip' data-placement='bottom' title='Modifier ce quiz'>"+
 		                    " <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> </a> "+
@@ -43,9 +43,14 @@ $(document).ready(function() {
 		                                cell_action
 		                    ] ).draw( false );
 		                    $("#modal_creation").modal('hide');
+		                    
 		                    if ((response.affichage_question=="0") && (response.affichage_reponse=="0"))
 		                    {
 		                    	$("#myModal_basic_quizz").modal('show');
+		                    }
+		                    else
+		                    {
+		                    	$("#myModal_general_quizz").modal('show');
 		                    }
 	                    }
 				}
@@ -88,17 +93,17 @@ $(document).ready(function() {
 								</div>
 								<div>
 									<div class="radio">
-										<label> <input type="radio" name="type" id="optionsRadios1"
+										<label> <input  type="radio" name="type" id="optionsRadios1"
 											value="0" checked="">Sondage
 										</label>
 									</div>
 									<div class="radio">
-										<label> <input type="radio" name="type" id="optionsRadios1"
+										<label> <input  type="radio" name="type" id="optionsRadios1"
 											value="1">Prive
 										</label>
 									</div>
 									<div class="radio">
-										<label> <input type="radio" name="type" id="optionsRadios2"
+										<label> <input  type="radio" name="type" id="optionsRadios2"
 											value="2">Test
 										</label>
 									</div>
