@@ -37,7 +37,7 @@
 											class="glyphicon glyphicon-remove" aria-hidden="true"
 											data-toggle="tooltip" data-placement="bottom"
 											title="Supprimer ce quiz"></span>
-									</a> <a class="btn btn-warning btn-circle"
+									</a> <a href="<?php echo base_url()?>quizz/modification/<?php echo $quiz['quiz_id']?>"   class="btn btn-warning btn-circle"
 										data-toggle="tooltip" data-placement="bottom"
 										title="Modifier ce quiz"> <span
 											class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

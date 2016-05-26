@@ -84,7 +84,7 @@
 					src="<?php echo base_url()?>assets/pictures/uvhc.png" />
 			</div>
 			<div class="col-xs-4  header-title text-center">
-				<p class="header-title-txt">Edusmart</p>
+				<a href="<?php echo base_url()?>index.php/quizz/liste_quizz" class="header-title-txt">Edusmart</a>
 			</div>
 			<!--   -->
 			<div class="col-xs-4 ">

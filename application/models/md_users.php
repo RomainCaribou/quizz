@@ -15,6 +15,13 @@ class Md_users extends CI_Model {
 			$query [0] = $q->num_rows ();
 			$query [1] = "animateur";
 			$query [2] = $q->result_array();
+			
+			if ($query [0] == 0) {
+				$q = $this->db->select ( '*' )->from ( 'administrateur' )->where ( 'admin_login', $nom )->where ( 'admin_mdp', $mdp )->get ();
+				$query [0] = $q->num_rows ();
+				$query [1] = "administrateur";
+				$query [2] = $q->result_array();
+			}
 		}
 		return $query;
 	}
