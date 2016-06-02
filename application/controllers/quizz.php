@@ -81,10 +81,18 @@ class Quizz extends CI_Controller {
 		return true;
 	}
 	public function delete_quizz() {
+		
 		$quizz_id = $this->input->post ( 'quiz_id' );
 		$this->md_quizz->delete_quizz ( $quizz_id );
+		
+		if ($this->session->userdata('logged_in')['admin_ID'])
+			redirect('administration/liste_quizz');
+			else
+			redirect('quizz/liste_quizz');
+		
 		return true;
 	}
+
 	public function create_basic_questions() {
 		$data ["quiz_nb_quest"] = $this->input->post ( 'nb_quest' );
 		$data ["value_timer"] = $this->input->post ( 'timer' );

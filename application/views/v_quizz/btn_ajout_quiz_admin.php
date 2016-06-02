@@ -52,11 +52,13 @@ $(document).ready(function() {
 		                    {
 		                    	$("#myModal_basic_quizz").modal('show');
 		                    	$("#id_quiz_modale_quest_basic").attr("value",id);
-		                    }else{
+		                    }else
+			                    {
 
 		                    	$("#Modalquestion").modal('show');
 		                    	$("#id_quiz_modale_quest").attr("value",id);
-		                    }
+		                	    }
+		                    
 		                    if (response.affichage_question=="0")
 		                    {
 			                    $(".div_enonce").hide();
@@ -299,7 +301,7 @@ $(document).ready(function() {
 			</div>
 
 			<div class="modal-footer">
-				<a href="<?php echo base_url()?>quizz/liste_quizz"
+				<a href="<?php echo base_url()?>administration/liste_quizz"
 					class="btn btn-md btn-danger btn-block">Annuler</a>
 			</div>
 		</div>
