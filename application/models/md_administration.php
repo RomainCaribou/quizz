@@ -41,5 +41,10 @@ if (! defined ( 'BASEPATH' ))
 				
 				
 		}
+		
+		function getall(){
+			$et=$this->db->get("administrateur");
+			return $et->result_array();
+		}
 	}
 			

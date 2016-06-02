@@ -17,7 +17,6 @@ $(document).ready(function() {
 				ajax : '1'
 		};
 
-		alert(newquiz.affichage_questions);
 
 		$.ajax({
 				url: "<?php echo base_url('quizz').'/new_quizz_admin' ?>",
@@ -72,10 +71,12 @@ $(document).ready(function() {
 		                    {
 			                    $(".div_timer").hide();
 			                }
-		                    if (response.type=="0")
+
+		                    if (response.type_quiz=="0")
 		                    {
 			                    $(".div_bonne_reponse").hide();
 			                }
+
 	                    }
 				}
 		});
@@ -247,7 +248,7 @@ $(document).ready(function() {
 
 							<div class="col-xs-6">
 
-								<label> Justification des réponses :</label>
+								<label> Justification des r&eacute;ponses :</label>
 
 								<div class="radio">
 									<label> <input type="radio" name="justification" value="0"
@@ -295,8 +296,8 @@ $(document).ready(function() {
 			</div>
 			<div class="modal-body">
 
-				<p>Etes vous sur de vouloir annuler la création du quizz ? Toutes
-					les données rentrées seront perdues</p>
+				<p>Etes vous sur de vouloir annuler la cr&eacute;ation du quizz ? Toutes
+					les donn&eacute;es rentr&eacute;es seront perdues</p>
 
 			</div>
 
