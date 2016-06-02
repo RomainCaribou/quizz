@@ -17,7 +17,6 @@ $(document).ready(function() {
 				ajax : '1'
 		};
 
-		alert(newquiz.affichage_questions);
 
 		$.ajax({
 				url: "<?php echo base_url('quizz').'/new_quizz' ?>",
@@ -76,6 +75,9 @@ $(document).ready(function() {
 			                    $(".div_bonne_reponse").hide();
 			                }
 	                    }
+				},
+				error: function (err){
+					console.log(err);
 				}
 		});
 	});

@@ -14,20 +14,20 @@ $( "#clonage_1" ).clone(true).insertBefore( "#cloneur" ).attr('id','clonage_'+nu
 $("input").iCheck({
     checkboxClass: 'icheckbox_square-blue',
     radioClass: 'iradio_square-blue'
-  });
+ });
+ 
+$("#clonage_"+num).find("label").first().text("Question "+num);
+$("#clonage_"+num).find("input").val("");
 
-$("#clonage_"+num+" > label:first").text("Question "+num);
-$("#clonage_"+num+" > input").val("");
-
-$("#clonage_"+num+" >.enonce:first").attr('name',"enonce_"+num);
-$("#clonage_"+num+" >.ra:first").attr('name',"ra_"+num);
-$("#clonage_"+num+" >.ra:first").val("");
-$("#clonage_"+num+" >.rb:first").attr('name',"rb_"+num);
-$("#clonage_"+num+" >.rb:first").val("");
-$("#clonage_"+num+" >.rc:first").attr('name',"rc_"+num);
-$("#clonage_"+num+" >.rc:first").val("");
-$("#clonage_"+num+" >.rd:first").attr('name',"rd_"+num);
-$("#clonage_"+num+" >.rd:first").val("");
+$("#clonage_"+num).find(".enonce").first().attr('name',"enonce_"+num);
+$("#clonage_"+num).find(".ra").first().attr('name',"ra_"+num);
+$("#clonage_"+num).find(".ra").first().val("");
+$("#clonage_"+num).find(".rb").first().attr('name',"rb_"+num);
+$("#clonage_"+num).find(".rb").first().val("");
+$("#clonage_"+num).find(".rc").first().attr('name',"rc_"+num);
+$("#clonage_"+num).find(".rc").first().val("");
+$("#clonage_"+num).find(".rd").first().attr('name',"rd_"+num);
+$("#clonage_"+num).find(".rd").first().val("");
 
 $("#clonage_"+num).find('.ra_ok').attr("name","ra_ok_"+num);
 $("#clonage_"+num).find('.rb_ok').attr('name',"rb_ok_"+num);

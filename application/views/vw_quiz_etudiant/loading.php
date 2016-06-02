@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var lancement_id = $("#lancement_id").val(); 
 		res = $("#nb-pers").text();
 		$.ajax({
-			url: "<?php echo base_url('quizz').'/get_number_participant/' ?>"+lancement_id,
+			url: "<?php echo base_url('quiz_etudiant').'/get_number_participant/' ?>"+lancement_id,
 			type: 'POST',
 			async : false,
 			success: function(i) {
@@ -19,19 +19,19 @@ $(document).ready(function(){
 				if (i===nb_total)
 				{
 					clearInterval(refreshInt);
-					document.location="<?php echo base_url('quizz').'/start_quiz/'?>"+lancement_id;
+					document.location="<?php echo base_url('quiz_etudiant').'/start_quiz/'?>"+lancement_id;
 				}
 			}
 		});
 		$.ajax({
-			url: "<?php echo base_url('quizz').'/get_state_quiz/' ?>"+lancement_id,
+			url: "<?php echo base_url('quiz_etudiant').'/get_state_quiz/' ?>"+lancement_id,
 			type: 'POST',
 			async : false,
 			success: function(state) {
 				if (state==="2") // 2 => quiz en cours / 1 => quiz lancé par le prof / 0 => quiz non démarré
 				{
 					clearInterval(refreshInt);
-					document.location="<?php echo base_url('quizz').'/start_quiz/'?>"+lancement_id;
+					document.location="<?php echo base_url('quiz_etudiant').'/start_quiz/'?>"+lancement_id;
 				}
 			} 
 		});

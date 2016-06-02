@@ -32,7 +32,7 @@
 									?>
 									</td>
 									<td align="center">
-										<a class="btn btn-primary" href="<?php echo base_url("quizz")."/recap_participation/".$quiz['lancement_quiz_id']?>">
+										<a class="btn btn-primary" href="<?php echo base_url("quiz_etudiant")."/recap_participation/".$quiz['lancement_quiz_id']?>">
 											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 											D&eacute;tail
 										</a>

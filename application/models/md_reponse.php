@@ -23,6 +23,7 @@ class Md_reponse extends CI_Model {
 		$this->db->where ( "reponse_etudiant.etudiant_id", $etudiant_id );
 		$this->db->where ( "reponse_etudiant.lancement_id", $lancement_id );
 		$res = $this->db->get ();
+		return $res->result_array ();
 	}
 	function get_question_reponse($quest_id) {
 		$res = $this->db->get_where ( 'reponses', array (

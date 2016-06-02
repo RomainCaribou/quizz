@@ -22,7 +22,7 @@ class connexion extends CI_Controller {
 			if ($ok [1] == "etudiant") {
 				$user_detail = $ok [2] [0];
 				$this->session->set_userdata ( 'logged_in', $user_detail );
-				redirect('quizz/list_quiz_etudiant');
+				redirect ( 'quiz_etudiant');
 			} else if ($ok [1] == "animateur") {
 				$user_detail = $ok [2] [0];
 				$this->session->set_userdata ( 'logged_in', $user_detail );

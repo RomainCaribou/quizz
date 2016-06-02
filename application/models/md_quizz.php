@@ -14,6 +14,10 @@ class Md_quizz extends CI_Model{
 		$this->db->insert('quizz',$data);
 		return $this->db->insert_id();
 	}
+	function insert_lancement_quiz($data){
+		$this->db->insert('lancement_quiz',$data);
+		return $this->db->insert_id();
+	}
 	function get_public_quiz($annee,$filiere,$groupe)
 	{
 		
@@ -55,11 +59,6 @@ class Md_quizz extends CI_Model{
 		$this->db->update('quizz',$data);
 	}
 	
-	//récupère les détails d'un quiz
-function update($data){	
-	$this->db->where('quiz_id', $data['quiz_id']);
-	$this->db->update('quizz',$data);
-	}
 	
 	function get_detail_quiz($id_quiz)
 	{
@@ -96,6 +95,12 @@ function update($data){
 		$res=get_detail_quiz($id_quiz);
 
 	}
-	
+
+	function get_state_quiz($lancement_id)
+	{
+		$this->db->select('etat');
+		$res = $this->db->get_where('lancement_quiz',array("lancement_id"=>$lancement_id));
+		return $res->result_array()[0]['etat'];
+	}
 }
 ?>

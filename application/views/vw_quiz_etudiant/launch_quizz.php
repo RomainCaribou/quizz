@@ -11,7 +11,7 @@ $(document).ready(function(){
 			clearInterval(timer);
 			var res = send_reponse();
 			if(res==true)
-				$(location).attr('href', "<?php echo base_url('quizz').'/run_question/'?>");
+				$(location).attr('href', "<?php echo base_url('quiz_etudiant').'/run_question/'?>");
 		}
 	}
 
@@ -28,17 +28,17 @@ $(document).ready(function(){
 	$("#next_quest").click(function(){
 		var res = send_reponse();
 		if(res==true)
-			$(location).attr('href', "<?php echo base_url('quizz').'/run_question/'?>");
+			$(location).attr('href', "<?php echo base_url('quiz_etudiant').'/run_question/'?>");
 	});
 
 	$("#end_quest").click(function(){
 		if(send_reponse())
-			$(location).attr('href', "<?php echo base_url('quizz').'/finish_quiz/'?>");
+			$(location).attr('href', "<?php echo base_url('quiz_etudiant').'/finish_quiz/'?>");
 	});
 
 	function send_reponse(){
 		var res = [];
-		i = 0;
+		var i = 0;
 		if ($("#repA").hasClass("rep_selected"))
 		{
 			res[i] = $("#val_rep_1").val();
@@ -55,6 +55,7 @@ $(document).ready(function(){
 		}if ($("#repD").hasClass("rep_selected"))
 		{
 			res[i] = $("#val_rep_4").val();
+			i++;
 		}	
 		console.log(res);
 
@@ -78,13 +79,14 @@ $(document).ready(function(){
 					 }
 					 else
 					 {
-						 console.log(rep);
+						 $("#res").html(rep);
 						 res_save = false;
 					 }
 				},
 				error: function(err)
 				{
 					console.log(err);
+					$("#res").html(err);
 					res_save = false;
 				}
 		});
@@ -123,10 +125,10 @@ $(document).ready(function(){
 							<div class="col-xs-5">
 								<button id="repA" type="button" class="btn btn-primary btn-block rep_btn" <?php if (!isset($reponse[0])) echo "disabled"?>>
 									<?php 
-									if((isset($reponse[0])) && ($quiz['affichage_reponse']))
+									if((isset($reponse[0])) && ($quiz['affichage_reponse']) &&($reponse[0]['reponse']!=""))
 										echo $reponse[0]['reponse'];
 									else 
-										$rep[0] = "A";
+										echo "A";
 									?>
 								</button>
 								<input type="hidden" id="val_rep_1" value="<?php if (isset($reponse[0])) echo $reponse[0]['rep_id'];?>"/>
@@ -134,7 +136,7 @@ $(document).ready(function(){
 							<div class="col-xs-5 col-xs-offset-2">
 								<button id="repB" type="button" class="btn btn-primary btn-block rep_btn" <?php if (!isset($reponse[1])) echo "disabled"?>>
 									<?php 
-									if((isset($reponse[1])) && ($quiz['affichage_reponse']))
+									if((isset($reponse[1])) && ($quiz['affichage_reponse']) && ($reponse[1]['reponse']!=""))
 										echo $reponse[1]['reponse'];
 									else 
 										echo "B";
@@ -157,7 +159,7 @@ $(document).ready(function(){
 							<div class="col-xs-5">
 								<button id="repC" type="button" class="btn btn-primary btn-block rep_btn"<?php if (!isset($reponse[2])) echo "disabled"?>>
 									<?php 
-									if((isset($reponse[2])) && ($quiz['affichage_reponse']))
+									if((isset($reponse[2])) && ($quiz['affichage_reponse']) && ($reponse[2]['reponse']!=""))
 										echo $reponse[2]['reponse'];
 									else 
 										echo "C";
@@ -168,7 +170,7 @@ $(document).ready(function(){
 							<div class="col-xs-5 col-xs-offset-2">
 								<button id="repD" type="button" class="btn btn-primary btn-block rep_btn" <?php if (!isset($reponse[3])) echo "disabled"?>>
 									<?php 
-									if((isset($reponse[3])) && ($quiz['affichage_reponse']))
+									if((isset($reponse[3])) && ($quiz['affichage_reponse']) && ($reponse[3]['reponse']!=""))
 										echo $reponse[3]['reponse'];
 									else 
 										echo "D";

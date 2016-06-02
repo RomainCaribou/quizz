@@ -191,7 +191,7 @@
 
 	<script>
 	$(document).ready(function(){
-	  $('.square-blue').iCheck({
+	  $("<?php if (isset($this->session->userdata ( 'logged_in' )['et_ID'])) echo'.square-blue'; else echo 'input'?>").iCheck({
 	    checkboxClass: 'icheckbox_square-blue',
 	    radioClass: 'iradio_square-blue'
 	  });

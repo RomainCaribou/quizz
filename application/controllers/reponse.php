@@ -18,7 +18,7 @@ class Reponse extends CI_Controller {
 		$data['etudiant_id'] = $etudiant['et_ID'];
 		$data['justification'] = $this->input->post("justification");
 		$nb_rep = $this->input->post("nb_rep");
-		if($nb_rep = 0)
+		if($nb_rep == 0)
 		{
 			echo "ok";
 			return true;
