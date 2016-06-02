@@ -73,6 +73,7 @@ class Quiz_animateur extends CI_Controller {
 		redirect ( '/quiz_animateur/recap_participation/' . $lancement_id );
 	}
 	public function recap_participation($lancement_id){
+		$this->session->set_userdata("no_square",true);
 		$data['etudiants'] = $this->md_etudiant_quiz->get_participants_quiz($lancement_id);
 		$data ['quiz'] = $this->md_quizz->get_lancement_quiz_id ( $lancement_id );
 		$data ['questions'] = $this->md_question->get_quiz_question ( $data ['quiz'] ['quiz_id'] );
@@ -86,5 +87,6 @@ class Quiz_animateur extends CI_Controller {
 		}
 		$this->template->write_view ( 'content', 'v_quizz/resultat/individuel', $data );
 		$this->template->render ();
+		$this->session->set_userdata("no_square",false);
 	}
 }

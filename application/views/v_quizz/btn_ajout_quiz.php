@@ -84,10 +84,10 @@ $(document).ready(function() {
 });
 	
 </script>
-<div class="col-sm-3 col-sm-pull-3">
+<div class="row" style="height:auto;">
 	<a data-toggle="modal" data-target="#modal_creation"
-		class="btn btn-md btn-info btn-outline btn-block pull-right"
-		style="width: 220px;"><b>Creation Quizz</b></a>
+		class="btn btn-md btn-info btn-outline btn-block pull-left"
+		style="width: 140px;margin-left:20px;"><b>Creation Quizz</b></a>
 </div>
 
 <div class="modal fade" id="modal_creation" tabindex="-1" role="dialog"

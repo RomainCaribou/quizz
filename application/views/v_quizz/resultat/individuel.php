@@ -1,3 +1,31 @@
+<script>
+$(document).ready(function(){
+  $('.flat-blue').each(function(){
+    var self = $(this),
+      label = self.next(),
+      label_text = label.text();
+
+    label.remove();
+    self.iCheck({
+      checkboxClass: 'icheckbox_line-blue',
+      radioClass: 'iradio_line-blue',
+      insert: '<div class="icheck_line-icon"></div>' + label_text
+    });
+  });
+  $('input').each(function(){
+	    var self = $(this),
+	      label = self.next(),
+	      label_text = label.text();
+
+	    label.remove();
+	    self.iCheck({
+	      checkboxClass: 'icheckbox_line-purple',
+	      radioClass: 'iradio_line-purple',
+	      insert: '<div class="icheck_line-icon"></div>' + label_text
+	    });
+	  });
+});
+</script>
 <div id="page-wrapper" class="no-margin-left">
 	<!-- /.row -->
 	<div class="row">
@@ -6,7 +34,6 @@
 				<div class="panel-heading">Liste de vos quizs</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
-					<?php var_dump($reponse_etudiant);?>
 					<div class="table-responsive">
 						<table id="liste_quiz_tab"
 							class="datatable table table-striped table-bordered table-hover">
@@ -25,15 +52,18 @@
 							<tbody>
 								<?php foreach ($etudiants as $etudiant):?>
 									<tr>
-										<td><?php echo $etudiant['et_Nom'].' '.$etudiant['et_Prenom']?></td>
-										<td></td>
-										<td></td>
+									<td><?php echo $etudiant['et_Nom'].' '.$etudiant['et_Prenom']?></td>
+									<td></td>
+									<td></td>
 											<?php foreach ($questions as $question):?>
-											<td> <?php 
-												foreach ($reponse_etudiant[$etudiant['et_ID']][$question['quest_id']] as $rep):
-													echo $rep['reponse_id'].' ';
-												endforeach;
-											?></td>
+											<td> <?php
+										foreach ( $reponse_etudiant [$etudiant ['et_ID']] [$question ['quest_id']] as $rep ) :?>
+											<input type="checkbox" class="flat-purple">
+											<label><?php echo $rep ['abc'] . ' : ' . $rep ['reponse'];?></label>
+									
+											
+										<?php endforeach;?>
+										</td>
 										<?php endforeach;?>
 									</tr>
 								<?php endforeach;?>
