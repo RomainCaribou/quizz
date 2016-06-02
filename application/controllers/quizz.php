@@ -258,7 +258,6 @@ class Quizz extends CI_Controller {
 		//$this->template->write_view ( 'content', 'v_quizz/quizz_modified' );
 		$this->session->set_userdata ( 'after_modif', 1 );
 		
-		
 		if ($this->session->userdata('logged_in')['admin_ID'])
 			redirect('administration/liste_quizz');
 		else
