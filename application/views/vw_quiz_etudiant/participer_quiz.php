@@ -75,7 +75,7 @@ $(document).ready(function(){
 						<?php $i = 1;?>
 						<?php foreach ($public_quizs as $quiz) : ?>
 							<option
-								value="<?php echo $quiz['lancement_id']."|".$quiz['quiz_id']?>">Quiz n&deg; <?php echo $i?>: <?php echo $quiz['quiz_nom']?></option>
+								value="<?php echo $quiz['lancement_id']."|".$quiz['quiz_id']?>">Quiz n&deg; <?php echo $i?>: <?php echo $quiz['quiz_nom']. " (".$quiz['lancement_id'].")"?></option>
 						<?php endforeach;?>
 						</select>
 					</div>

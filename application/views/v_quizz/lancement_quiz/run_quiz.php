@@ -28,7 +28,7 @@ $(document).ready(function(){
 	});
 
 	$("#end_quest").click(function(){
-		$(location).attr('href', "<?php echo base_url('quiz_etudiant').'/finish_quiz/'?>");
+		$(location).attr('href', "<?php echo base_url('quiz_animateur').'/finish_quiz/'?>");
 	});
 });
 </script>

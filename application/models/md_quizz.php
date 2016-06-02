@@ -24,9 +24,10 @@ class Md_quizz extends CI_Model{
 		$sql1 = "SELECT * FROM quizz JOIN lancement_quiz 
 				ON quizz.quiz_id=lancement_quiz.quiz_id 
 				WHERE type_quiz='1'
-				AND etat = 1 
+				AND etat = '1' 
 				AND (filiere IS NULL OR filiere='".$filiere."')
 				AND (annee IS NULL OR annee='".$annee."')";
+		
 		if (isset($groupe))
 			$sql2="	AND (groupe IS NULL OR groupe='".$groupe."')";
 		else 

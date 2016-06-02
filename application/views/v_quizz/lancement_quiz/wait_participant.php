@@ -4,7 +4,7 @@ $(document).ready(function(){
 	
 	var nb_total = $("#nb_total_participant").val();
 
-	//var refreshInt = setInterval(refresh_nb_participant, 2000);
+	var refreshInt = setInterval(refresh_nb_participant, 2000);
 	
 	function refresh_nb_participant()
 	{
@@ -42,7 +42,7 @@ $(document).ready(function(){
 						Nombre de personnes connect&eacute;es: 
 						<i id="nb-pers">0</i> / <?php echo $nb_total;?><br/><br/>
 						<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-						<a class="btn btn-md center-block btn-primary" href="<?php echo base_url('quiz_animateur').'/run_quiz/'?>">Lancer le quiz</a>
+						<a class="btn btn-md center-block btn-primary" href="<?php echo base_url('quiz_animateur').'/run_quiz/'?>">Lancer le quiz (<?php echo $this->session->userdata ( 'lancement_en_cours' );?>)</a>
 						</div>
 						
 					</p>
