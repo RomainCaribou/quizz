@@ -1,9 +1,15 @@
+
+
+
+
+
+
 <div id="page-wrapper" class="no-margin-left">
 <!-- /.row -->
 <div class="row">
 <div class="col-lg-12">
 <div class="panel panel-default">
-<div class="panel-heading">Liste des quizzs</div>
+<div class="panel-heading" style="text-align:center;"><b>Liste des quizzs</b></div>
 <!-- /.panel-heading -->
 <div class="panel-body">
 <div class="table-responsive">
@@ -63,7 +69,7 @@
 											class="glyphicon glyphicon-remove" aria-hidden="true"
 											data-toggle="tooltip" data-placement="bottom"
 											title="Supprimer ce quiz"></span>
-									</a> <a href="<?php echo base_url()?>quizz/modification/<?php echo $quiz['quiz_id']?>"   class="btn btn-warning btn-circle"
+									</a> <a href="<?php echo base_url()?>administration/modification/<?php echo $quiz['quiz_id']?>"   class="btn btn-warning btn-circle"
 										data-toggle="tooltip" data-placement="bottom"
 										title="Modifier ce quiz"> <span
 											class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

@@ -13,6 +13,8 @@ class Quizz extends CI_Controller {
 		$user = $this->session->userdata ( 'logged_in' );
 		if (isset ( $user ['et_ID'] ))
 			redirect ( 'quiz_etudiant');
+		elseif (isset ( $user ['admin_ID'] ))
+			redirect ( 'administration');
 		else
 			$this->liste_quizz ();
 	}
@@ -61,6 +63,23 @@ class Quizz extends CI_Controller {
 		
 		return true;
 	}
+	public function new_quizz_admin()
+	{
+		$data["quiz_nom"]= $this->input->post('nomquizz');
+		$data["type_quiz"]= $this->input->post('type');
+		$data["affichage_question"]= $this->input->post('affichage_questions');
+		$data["affichage_reponse"]= $this->input->post('affichage_reponses');
+		$data["reponse_multiple"]= $this->input->post('reponse_multiple');
+		$data["quiz_timer"]= $this->input->post('timer');
+		$data["affichage_resultat"]= $this->input->post('affichage_resultats');
+		$data["qr_code"]= $this->input->post('avec_qrcode');
+		$data["justification"]= $this->input->post('justification');
+		$id = $this->md_quizz->insert($data);
+		$detail = $this->md_quizz->get_detail_quiz($id);
+		echo json_encode ($detail);
+	
+		return true;
+	}
 	public function delete_quizz() {
 		$quizz_id = $this->input->post ( 'quiz_id' );
 		$this->md_quizz->delete_quizz ( $quizz_id );
@@ -76,9 +95,12 @@ class Quizz extends CI_Controller {
 		$data2 ["quizz_id"] = $data ["quiz_id"];
 		$this->md_question->insert_basic_question ( $data2, $data ["quiz_nb_quest"] );
 		
+		$this->session->set_userdata ( 'after_modif', 1 );
 		
-		//$this->liste_quizz ();
-		redirect('quizz/liste_quizz');
+		if ($this->session->userdata('logged_in')['admin_ID'])
+			redirect('administration/liste_quizz');
+		else
+			redirect('quizz/liste_quizz');
 	}
 	
 
@@ -108,7 +130,12 @@ class Quizz extends CI_Controller {
 		}
 		//$this->template->write_view ( 'content', 'v_quizz/quizz_modified' );
 		$this->session->set_userdata ( 'after_add', 1 );
-		redirect('quizz/liste_quizz');
+		
+		
+		if ($this->session->userdata('logged_in')['admin_ID'])
+			redirect('administration/liste_quizz');
+		else
+			redirect('quizz/liste_quizz');
 		//$this->liste_quizz ();
 	}
 	public function modification($quiz_id) {
@@ -222,7 +249,12 @@ class Quizz extends CI_Controller {
 		}
 		//$this->template->write_view ( 'content', 'v_quizz/quizz_modified' );
 		$this->session->set_userdata ( 'after_modif', 1 );
-		redirect('quizz/liste_quizz');
+		
+		
+		if ($this->session->userdata('logged_in')['admin_ID'])
+			redirect('administration/liste_quizz');
+		else
+			redirect('quizz/liste_quizz');
 		//$this->liste_quizz ();
 	}
 }

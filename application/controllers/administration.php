@@ -7,6 +7,8 @@ class administration extends CI_Controller {
 		$this->load->model('md_question');
 		$this->load->model('md_quizz');
 		$this->load->model('md_administration');
+		$this->load->model('md_reponse');
+		
 	}
 	
 	public function index(){
@@ -21,15 +23,38 @@ class administration extends CI_Controller {
 		$this->template->write_view('content', 'v_quizz/create_basic_quizz_popup');
 		$this->template->write_view('content', 'v_quizz/create_general_quizz');
 		$this->template->write_view('content', 'homepage/homepage_logged_admin');
-		$this->template->write_view('bouton_header','v_quizz/btn_ajout_quiz');
-	
+		$this->template->write_view('bouton_header','v_quizz/btn_ajout_quiz_admin');
 		//		$this->template->write_view('content', 'v_quizz/quizz_validated');
 	
 	
 		$this->template->render();
 	}
 	
+	public function modification($quiz_id) {
+		$data ["quizz"] = $this->md_quizz->get_detail_quiz ( $quiz_id );
+		$data ["questions"] = $this->md_question->get_quiz_question ( $quiz_id );
 	
+		foreach ( $data ["questions"] as $question ) {
+			$quest_id = $question ['quest_id'];
+			$data ["reponse"] [$quest_id] = $this->md_reponse->get_question_reponse ( $quest_id );
+		}
+	
+		$this->template->write_view ( 'content', 'v_quizz/modify_quizz', $data );
+		//$this->template->render ();
+		$this->liste_quizz ();
+	}
+	
+	public function liste_etudiant(){
+		
+		$data['etudiants'] = $this->md_etudiant->getall();
+		$data['animateurs'] = $this->md_animateurs->getall();
+		$data['administrateurs'] = $this->md_administration->getall();
+		
+		
+		$this->template->write_view('content', 'v_quizz/list_etudiants', $data);
+		$this->template->render();
+		
+	}
 	
 	function add_user(){
 		$data["username"]=$this->input->post('username');
@@ -56,6 +81,7 @@ class administration extends CI_Controller {
 			$this->md_administration->add_administrateur($data);
 				
 		}
-		
+		$this->liste_quizz();
 	}
 }
+

@@ -84,7 +84,7 @@
 					src="<?php echo base_url()?>assets/pictures/uvhc.png" />
 			</div>
 			<div class="col-xs-4  header-title text-center">
-				<a href="<?php echo base_url()?>index.php/quizz/liste_quizz" class="header-title-txt">Edusmart</a>
+				<a href="<?php echo base_url()?>index.php/quizz" class="header-title-txt">Edusmart</a>
 			</div>
 			<!--   -->
 			<div class="col-xs-4 ">
@@ -109,11 +109,11 @@
 		</script>
 		
 		<?php if ($user!=NULL) :?>
-		<div class="row" style="height: 40px; margin-top: 10px;">
+		<div class="row" style="height: auto; margin: 10px;">
 
-			<div class="col-sm-3 col-sm-push-9  ">
-				<button class="btn btn-danger btn-md pull-right"
-					style="margin-right: 10px; margin-left: 10px;" data-toggle="modal"
+			<div style=" width:150px;" class="pull-right">
+				<button class="btn btn-danger btn-md "
+					style="margin-left: 20px;" data-toggle="modal"
 					data-target="#modal_deconnexion">Deconnexion</button>
 			</div>
 
