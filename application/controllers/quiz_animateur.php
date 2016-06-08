@@ -89,4 +89,9 @@ class Quiz_animateur extends CI_Controller {
 		$this->template->render ();
 		$this->session->set_userdata("no_square",false);
 	}
+	
+	public function delete_lancement($lancement_id){
+		$this->md_quizz->delete_lancement_quizz($lancement_id);
+		return true;
+	}
 }

@@ -21,6 +21,10 @@ class Quizz extends CI_Controller {
 	public function liste_quizz() {
 		$animateur_id = $this->session->userdata ( 'logged_in' )['animateur_ID'];
 		$data ['quiz_admin'] = $this->md_quizz->get_all_quiz ( $animateur_id );
+		foreach ($data['quiz_admin'] as $quiz)
+		{
+			$data ['lancement_quiz'][$quiz['quiz_id']] = $this->md_quizz->get_lancement_quiz($quiz['quiz_id']);
+		}
 		$this->template->write_view ( 'content', 'v_quizz/list_quizz_animateur', $data );
 		$this->template->write_view ( 'content', 'v_quizz/detail_quiz', $data );
 		$this->template->write_view ( 'content', 'v_quizz/create_basic_quizz_popup' );
