@@ -4,6 +4,26 @@ $(document).ready(function(){
 		$("#modal_choix_type_quizz").modal('hide');
 		$("#modal_choix_quizz_public").modal('show');
 	});
+	//var refreshInt = setInterval(refresh_liste_quiz, 5000);
+	$("#refresh_liste").click(function(){
+		$("#liste_quiz option").remove();
+		$.ajax({
+			url: "<?php echo base_url('quiz_etudiant').'/get_public_quiz' ?>",
+			type: 'POST',
+			async : false,
+			success: function(data) {
+				var quizs = JSON.parse(data);
+				$.each(quizs,function(index,quiz){
+					$('#liste_quiz').append($('<option>', { 
+				        value: quiz.lancement_id+"|"+quiz.quiz_id,
+				        text : "Quiz n "+(index+1)+" : "+quiz.quiz_nom+" ("+ quiz.lancement_id +")" 
+				    }));
+				});
+			}
+		});
+	});
+
+	
 	$("#btn_select_quiz").click(function(){
 		var quiz = $("#liste_quiz").val();
 		quiz = quiz.split("|");
@@ -70,8 +90,15 @@ $(document).ready(function(){
                 </div>
 				<form role="form">
 					<div class="form-group">
-						<label>S&eacute;lectionner le quiz</label> <select class="form-control"
-							id="liste_quiz">
+						<label>
+							<a class="btn btn-primary btn-circle" id="refresh_liste"> <span
+									class="glyphicon glyphicon-refresh" aria-hidden="true"
+									data-toggle="tooltip" data-placement="bottom"
+									title="Rafraichir la liste"></span>
+							</a> 
+							S&eacute;lectionner le quiz
+						</label> 
+						<select class="form-control" id="liste_quiz">
 						<?php $i = 1;?>
 						<?php foreach ($public_quizs as $quiz) : ?>
 							<option

@@ -24,6 +24,13 @@ class Quiz_etudiant extends CI_Controller {
 		$this->template->render ();
 	}
 	
+	public function get_public_quiz(){
+		$etudiant = $this->session->userdata ( 'logged_in' );
+		$public_quizs = $this->md_quizz->get_public_quiz ( $etudiant ['et_annee'], $etudiant ['et_filiere'], $etudiant ['groupe'] );
+		echo json_encode ( $public_quizs );
+		return true;
+	}
+	
 	public function participer_quiz() {
 		$user = $this->session->userdata ( 'logged_in' );
 		$data ['quizz_ID'] = $this->input->post ( 'quiz_id' );

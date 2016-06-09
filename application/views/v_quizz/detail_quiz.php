@@ -46,11 +46,11 @@
 										<tr>
 											<th>Timer:</th>
 											<td><?php
-	if ($quiz ['quiz_Timer'] != NULL)
-		echo $quiz ['quiz_Timer'];
-	else
-		echo "Aucun timer pr&eacute;defini";
-	?>
+												if ($quiz ['quiz_Timer'] != NULL)
+													echo $quiz ['quiz_Timer'];
+												else
+													echo "Aucun timer pr&eacute;defini";
+												?>
 											</td>
 										</tr>
 										<tr>
@@ -65,31 +65,31 @@
 											<th>QR Code:</th>
 											<td>
 											<?php
-	if ($quiz ['qr_code'])
-		echo $quiz ['qr_code'];
-	else
-		echo "Aucun QR Code pr&eacute;defini";
-	?>
+											if ($quiz ['qr_code'])
+												echo $quiz ['qr_code'];
+											else
+												echo "Aucun QR Code pr&eacute;defini";
+											?>
 											</td>
 										</tr>
 										<tr>
 											<th>Type du quiz:</th>
 											<td>
 											<?php
-	switch ($quiz ['type_quiz']) {
-		case 1 :
-			echo "Public";
-			break;
-		
-		case 2 :
-			echo "Priv&eacute;";
-			break;
-		
-		default :
-			echo "Aucun type pr&eacute;defini";
-			break;
-	}
-	?>
+											switch ($quiz ['type_quiz']) {
+												case 1 :
+													echo "Public";
+													break;
+												
+												case 2 :
+													echo "Priv&eacute;";
+													break;
+												
+												default :
+													echo "Aucun type pr&eacute;defini";
+													break;
+											}
+											?>
 											</td>
 										</tr>
 										<tr>
@@ -227,8 +227,8 @@
 
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Modifier</button>
-				<button type="button" class="btn btn-danger">Supprimer</button>
+				<a href="<?php echo base_url()?>quizz/modification/<?php echo $quiz['quiz_id']?>" class="btn btn-default" data-dismiss="modal">Modifier</a>
+				<button type="button" class="btn btn-danger btn-delete-quiz_md">Supprimer</button>
 			</div>
 		</div>
 		<!-- /.modal-content -->
@@ -269,6 +269,14 @@
 
 <script>
 $(document).ready(function(){
+
+
+	$(document).on('click','.btn-delete-quiz_md',function(){
+        td_id = $(this).attr("id"); 
+		id = td_id.replace("delete_quiz_","");
+		delete_quiz(id);
+    });
+    
   $('input').iCheck({
     checkboxClass: 'icheckbox_square-blue',
     radioClass: 'iradio_square-blue'
