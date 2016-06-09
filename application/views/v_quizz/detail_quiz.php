@@ -288,7 +288,7 @@ $(document).ready(function(){
 		  $("#div_lancement_"+id).remove();
 
 			$.ajax({
-					url: "<?php echo base_url('quiz_animateur').'/delete_lancement/' ?>"+id,
+					url: "<?php echo base_url('quiz_animateur').'/delete_lancement/' ?>+id",
 					type: 'POST',
 					async : false,
 					success: function(res) {

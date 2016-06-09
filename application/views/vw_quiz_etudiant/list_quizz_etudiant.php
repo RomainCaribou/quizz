@@ -19,6 +19,7 @@
 							</thead>
 							<tbody>
 								<?php foreach ($quiz_et as $quiz): ?>
+							
 								
 								<tr>
 									<td><?php echo $quiz['quiz_id']?></td>
@@ -28,7 +29,7 @@
 									/*
 									 * Cette fonction format_fr_date a été définie dans helper/utils_helper
 									 */
-									echo format_fr_date ( $quiz ['quiz_date_creation'] );
+									echo format_fr_date ( $quiz ['date_participation'] );
 									?>
 									</td>
 									<td align="center">
