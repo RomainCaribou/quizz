@@ -71,7 +71,7 @@ class administration extends CI_Controller {
 		$data['etudiants'] = $this->md_etudiant->getall();
 		$data['animateurs'] = $this->md_animateur->getall();
 		$data['administrateurs'] = $this->md_administration->getall();
-		
+
 		
 		$this->template->write_view('content', 'v_quizz/list_etudiants', $data);
 		$this->template->render();
@@ -102,6 +102,26 @@ class administration extends CI_Controller {
 		$this->liste_quizz();
 	}
 	
+	public function delete_etudiant($et_ID) {
 	
+		$this->md_etudiant->delete_etudiant ( $et_ID );
+	    redirect('administration/liste_etudiant');
+
+				
+	}
+	
+	public function delete_animateur($anim_ID) {
+	
+		$this->md_animateur->delete_animateur ( $anim_ID );
+		redirect('administration/liste_etudiant');
+	
+		
+	}
+	
+	public function delete_administrateur($admin_ID) {
+	
+		$this->md_administration->delete_administrateur ( $admin_ID );
+		redirect('administration/liste_etudiant');
+	}
 }
 

@@ -18,5 +18,10 @@ class Md_etudiant extends CI_Model{
 		
 		$this->db->update('Etudiant',$data,array('id'=>$id)); // on modifie tous les champs qui correspondent, champs unique si clé primaire
 	}
+	
+	function delete_etudiant($etu_id){
+		$this->db->where('et_ID', $etu_id);
+		$this->db->delete('etudiant');
+	}
 }
 ?>

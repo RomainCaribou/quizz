@@ -46,5 +46,10 @@ if (! defined ( 'BASEPATH' ))
 			$et=$this->db->get("administrateur");
 			return $et->result_array();
 		}
+		
+		function delete_administrateur($admin_id){
+			$this->db->where('admin_ID', $admin_id);
+			$this->db->delete('administrateur');
+		}
 	}
 			
