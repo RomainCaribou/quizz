@@ -35,7 +35,7 @@
 									<?php endforeach;?>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="dcontenu">
 								<?php foreach ($etudiants as $etudiant):?>
 									<tr>
 									<td><?php echo $etudiant['et_Nom'].' '.$etudiant['et_Prenom']?></td>
@@ -78,6 +78,18 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Graphe des r&eacute;sultats</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<div id="individual_chart"></div>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 </div>
 
@@ -85,5 +97,32 @@
 <script>
     $(document).ready(function() {
         $('.datatable').dataTable();
+
+        var table = $("#dcontenu");
+        var tr = $(table).find("tr");
+
+        data_bar = [];
+        label_bar = [];
+        $( tr).each(function( index, element ) {
+            td =  $(element).find("td");
+            var tab = {
+                    y: $($(td)[0]).html().trim(),
+                    a: $($(td)[1]).html().trim().replace("%","")
+            };
+            data_bar.push(tab);
+            label_bar.push(tab.y);
+        });
+        $(function() {
+        	Morris.Bar({
+                element: 'individual_chart',
+                data: data_bar,
+                xkey: 'y',
+                ykeys: 'a',
+                labels: label_bar,
+                hideHover: 'auto',
+                resize: true
+            });
+        });
+        
     });
  </script>

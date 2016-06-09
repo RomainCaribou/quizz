@@ -38,18 +38,18 @@
 							<tbody id="dcontenu">
 								<?php $i = 1;?>
 								<?php foreach ($questions as $question):?>
-								<tr id="tr_<?php echo $question['quest_id']?>">
+								<tr>
 									<td><?php echo $i. ' : '.$question['question']?></td>
-									<td id="td_a_<?php echo $question['quest_id']?>">
+									<td>
 										<?php echo $nb_a[$question['quest_id']]?> %
 									</td>
-									<td id="td_b_<?php echo $question['quest_id']?>">
+									<td>
 										<?php echo $nb_b[$question['quest_id']]?> %
 									</td>
-									<td id="td_c_<?php echo $question['quest_id']?>">
+									<td>
 										<?php echo $nb_c[$question['quest_id']]?> %
 									</td>
-									<td id="td_d_<?php echo $question['quest_id']?>">
+									<td>
 										<?php echo $nb_d[$question['quest_id']]?> %
 									</td>
 									<td>
@@ -71,7 +71,7 @@
 				<div class="panel-heading">Graphe des r&eacute;sultats</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
-					<div id="individual_chart"></div>
+					<div id="global_chart"></div>
 				</div>
 			</div>
 		</div>
@@ -92,25 +92,21 @@
         $( tr).each(function( index, element ) {
             td =  $(element).find("td");
             var tab = {
-                    y: $($(td)[0]).html().trim().replace("%",""),
+                    y: "Question "+(index+1),
                     a: $($(td)[1]).html().trim().replace("%",""),
                     b: $($(td)[2]).html().trim().replace("%",""),
                     c: $($(td)[3]).html().trim().replace("%",""),
                     d: $($(td)[4]).html().trim().replace("%","")
             };
             data_bar.push(tab);
-            label_bar.push(index+1);
         });
-
-        alert(JSON.stringify(data_bar));
-        alert(JSON.stringify(label_bar));
         $(function() {
         	Morris.Bar({
-                element: 'individual_chart',
+                element: 'global_chart',
                 data: data_bar,
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c','d'],
-                labels: label_bar,
+                labels: ['a', 'b', 'c','d'],
                 hideHover: 'auto',
                 resize: true
             });
