@@ -23,7 +23,23 @@ class Md_reponse extends CI_Model {
 		$this->db->where ( "reponse_etudiant.etudiant_id", $etudiant_id );
 		$this->db->where ( "reponse_etudiant.lancement_id", $lancement_id );
 		$res = $this->db->get ();
-		return $res->result_array ();
+		return $this->add_abc_to_reponse($res->result_array (),$quest_id);
+	}
+	function add_abc_to_reponse($reponse,$quest_id){
+		$possible_reponse = $this->get_question_reponse($quest_id);
+		$index = 'a';
+		foreach ($possible_reponse as $rp)
+		{
+			foreach ($reponse as $key=>$rep_et)
+			{
+				if ($rep_et['reponse_id']==$rp['rep_id'])
+				{
+					$reponse[$key]['abc'] = $index;
+				}
+			}
+			$index++;
+		}
+		return $reponse;
 	}
 	function get_question_reponse($quest_id) {
 		$res = $this->db->get_where ( 'reponses', array (

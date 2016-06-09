@@ -50,9 +50,20 @@ class Md_quizz extends CI_Model{
 		return $res->result_array();
 	}
 	
+	function get_lancement_quiz($quiz_id)
+	{
+		$res = $this->db->get_where('lancement_quiz',array("quiz_id"=>$quiz_id));
+		return $res->result_array();
+	}
+	
 	function delete_quizz($quizz_id){
                 $this->db->where('quiz_id', $quizz_id);
                 $this->db->delete('quizz');
+	}
+	
+	function delete_lancement_quizz($lancement_id){
+		$this->db->where('lancement_id', $lancement_id);
+		$this->db->delete('lancement_quiz');
 	}
 	
 	function update($data){	
