@@ -46,6 +46,9 @@
 <!-- Custom CSS -->
 <link href="<?php  echo base_url()?>assets/dist/css/sb-admin-2.css"
 	rel="stylesheet">
+	
+<!-- Moriss CSS -->
+<link href="<?php  echo base_url()?>assets/bower_components/morrisjs/morris.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link
@@ -172,7 +175,11 @@
 	<!-- Metis Menu Plugin JavaScript -->
 	<script
 		src="<?php  echo base_url()?>assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
+		
+	<!-- Morris js -->
+    <script src="<?php  echo base_url()?>assets/bower_components/morrisjs/morris.js"></script>
+    <script src="<?php  echo base_url()?>assets/bower_components/raphael/raphael-min.js"></script>
+    
 	<!-- DataTables JavaScript -->
 	<script
 		src="<?php  echo base_url()?>assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
