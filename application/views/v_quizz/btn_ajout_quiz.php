@@ -236,7 +236,7 @@ $(document).ready(function() {
 
 							<div class="col-xs-6">
 
-								<label> Justification des réponses :</label>
+								<label> Justification des r&eacute;ponses :</label>
 
 								<div class="radio">
 									<label> <input type="radio" name="justification" value="0"
@@ -284,8 +284,8 @@ $(document).ready(function() {
 			</div>
 			<div class="modal-body">
 
-				<p>Etes vous sur de vouloir annuler la création du quizz ? Toutes
-					les données rentrées seront perdues</p>
+				<p>Etes vous sur de vouloir annuler la cr&eacute;ation du quizz ? Toutes
+					les donn&eacute;es rentr&eacute;es seront perdues</p>
 
 			</div>
 

@@ -154,7 +154,7 @@
 			</div>
 
 			<div class="modal-footer">
-				<button class="btn btn-md btn-danger" id="confirm-delete">Annuler</button>
+				<button class="btn btn-md btn-danger" >Annuler</button>
 				<button type="button" id="btn_validate_choix_form" class="btn btn-primary" data-dismiss="modal">Valider</button>
 			
 			</div>
