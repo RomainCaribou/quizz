@@ -64,8 +64,6 @@
 											?>
 											<button class="btn btn-sm <?php echo $class_btn?>">
 												<?php echo strtoupper ($rep ['abc']);?>
-												<?php  if($rep ['reponse']!="") echo " : "?>
-												<?php echo $rep ['reponse'];?>
 											</button>
 										<?php endforeach;?>
 										</td>

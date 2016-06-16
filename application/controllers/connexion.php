@@ -8,10 +8,6 @@ class connexion extends CI_Controller {
 	public function index() {
 		
 		$this->template->write_view ( 'content', 'homepage/identification' );
-	//	redirect('administration/liste_quizz');
-		//$this->template->write_view ( 'content', 'v_quizz/liste_quizz_admin' );
-		//$this->template->write_view ( 'content', 'homepage/identification' );
-		
 		$this->template->render ();
 	}
 	public function test_login() {
